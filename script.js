@@ -97,13 +97,13 @@ function updateText4() {
 
 // EXO 5 & 6
 
-
-const inputTextScore = parseInt(document.getElementById("Score").value);
-
-
 function updateText5() {
+    const inputTextScore = parseInt(document.getElementById("Score").value);
     let output5 = document.getElementById("output5")
 
+    function minMaxScore(min, max) {
+        return(inputTextScore >= min && inputTextScore <= max)
+    } 
 
     if (isNaN(inputTextScore)) {
         output5.textContent = "Ce n'est pas un nombre.";
@@ -121,10 +121,6 @@ function updateText5() {
         output5.textContent = "Note invalide !";
     }
 }
-
-function minMaxScore(min, max) {
-    return(inputTextScore >= min && inputTextScore <= max)
-} 
 
 // PREMIERE METHODE PLUS LONGUE
 
