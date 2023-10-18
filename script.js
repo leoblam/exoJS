@@ -29,13 +29,13 @@ function updateText3() {
     let inputTextAge2 = parseInt(document.getElementById("Age2").value);
 
     if (inputTextAge2 >= 1 && inputTextAge2 <= 17) {
-        document.getElementById("output3").textContent = "Vous n'etes pas encore majeur.";
+        document.getElementById("output3").textContent = "A "+inputTextAge2 +"ans, vous n'etes pas encore majeur.";
     } else if (inputTextAge2 >= 18 && inputTextAge2 <= 49) {
-        document.getElementById("output3").textContent = "Vous etes majeur mais pas encore senior.";
+        document.getElementById("output3").textContent = "A "+inputTextAge2 +"ans, vous etes majeur mais pas encore senior.";
     } else if (inputTextAge2 >= 50 && inputTextAge2 <= 59) {
-        document.getElementById("output3").textContent = "Vous etes senior mais pas encore retraite.";
+        document.getElementById("output3").textContent = "A "+inputTextAge2 +"ans, vous etes senior mais pas encore retraite.";
     } else if (inputTextAge2 >= 60 && inputTextAge2 <= 120) {
-        document.getElementById("output3").textContent = "Vous etes retraite, profitez de votre temps libre !";
+        document.getElementById("output3").textContent = "A "+inputTextAge2 +"ans, vous etes retraite, profitez de votre temps libre !";
     } else {
         document.getElementById("output3").textContent = "Âge invalide petit malin !";
     }
