@@ -8,7 +8,7 @@ function updateText() {
     let inputTextName = document.getElementById("Name").value;
     let inputTextAge = document.getElementById("Age").value;
 
-    document.getElementById("output1").innerText = ("Bienvenue !" + "\n" + "Votre Prenom est: " + inputTextSurname +  "\n" +"Votre Nom est: " + inputTextName +  "\n" +"Vous avez: " + inputTextAge+"ans");
+    document.getElementById("output1").innerText = ("Bienvenue !" + "\n" + "Votre Prenom est : " + inputTextSurname +  "\n" +"Votre Nom est : " + inputTextName +  "\n" +"Vous avez : " + inputTextAge+"ans");
 }
 
 // EXO 2
