@@ -6,7 +6,7 @@ let tmp = 0;
 function updateText() {
     let inputTextSurname = document.getElementById("Surname").value;
     let inputTextName = document.getElementById("Name").value;
-    let inputTextAge = document.getElementById("Age").value;
+    let inputTextAge = parseInt(document.getElementById("Age").value);
 
     document.getElementById("output1").innerText = ("Bienvenue !" + "\n" + "Votre Prenom est : " + inputTextSurname +  "\n" +"Votre Nom est : " + inputTextName +  "\n" +"Vous avez : " + inputTextAge+"ans");
 }
