@@ -207,6 +207,186 @@ function updateText7() {
   while (passage < 10) {
     valeur++;
     passage++;
-    output.innerHTML += `x stock la valeur ${valeur} lors du passage  n${passage} dans la boucle<br/>`;
+    output.innerHTML += `x stock la valeur ${valeur} lors du passage  n${passage} dans la boucle <br/>`;
   }
+}
+
+// function updateText8() {
+//   let output = document.getElementById("output8");
+
+//   for (i = 0; i < 1; i++) {
+//     let result = "";
+//     for (j = 1; j < 11 - i; j++) {
+//       result += 1;
+//       output.innerHTML += result + "<br/>";
+//     }
+//   }
+// }
+
+function updateText8() {
+  let output = document.getElementById("output8");
+  let number = document.getElementById("lines").value;
+  let letter = document.getElementById("letter").value;
+  output.innerHTML = "";
+
+  if (number > 25) {
+    output.innerHTML = "Le nombre de ligne ne voit pas exceder 25";
+  } else if (letter.length > 1) {
+    output.innerHTML = "Un seul caractere requis";
+  } else {
+    for (i = 0; i < 1; i++) {
+      let result = "";
+      for (let j = 0; j < number - i; j++) {
+        result += letter;
+        output.innerHTML += result + "<br/>";
+      }
+    }
+  }
+}
+
+function refreshInput() {
+  const output = document.getElementById("output9");
+
+  let buttonAddition = document.getElementById("buttonAddition");
+  let buttonMultipy = document.getElementById("buttonMultipy");
+  let buttonSquare = document.getElementById("buttonSquare");
+  let buttonDivide = document.getElementById("buttonDivide");
+  let buttonCircumference = document.getElementById("buttonCircumference");
+
+  buttonAddition.addEventListener("click", additionFunction);
+  buttonMultipy.addEventListener("click", multiplyFunction);
+  buttonSquare.addEventListener("click", squareFunction);
+  buttonDivide.addEventListener("click", divideFunction);
+  buttonCircumference.addEventListener("click", circumferenceFunction);
+
+  function getNumber() {
+    number1 = Number(document.getElementById("number1Exo11").value);
+    number2 = Number(document.getElementById("number2Exo11").value);
+    return;
+  }
+
+  function clear() {
+    document.getElementById("number1Exo11").value = "";
+    document.getElementById("number2Exo11").value = "";
+    return;
+  }
+
+  function addition(x1, x2) {
+    return x1 + x2;
+  }
+  function multiply(x1, x2) {
+    return x1 * x2;
+  }
+  function square(x1) {
+    return x1 * x1;
+  }
+  function divide(x1, x2) {
+    return x1 / x2;
+  }
+
+  function circumference(x1, x2) {
+    return x1 * Math.PI * x2;
+  }
+
+  function additionFunction() {
+    getNumber();
+    addition();
+    output.innerText =
+      number1 + " + " + number2 + " = " + addition(number1, number2);
+    clear();
+  }
+
+  function multiplyFunction() {
+    getNumber();
+    multiply();
+    output.innerText =
+      number1 + " x " + number2 + " = " + multiply(number1, number2);
+    clear();
+  }
+
+  function squareFunction() {
+    getNumber();
+    multiply();
+    output.innerText = number1 + " au carre = " + square(number1);
+    clear();
+  }
+
+  function divideFunction() {
+    getNumber();
+    divide();
+    output.innerText =
+      number1 + " / " + number2 + " = " + divide(number1, number2);
+    clear();
+  }
+
+  function circumferenceFunction() {
+    getNumber();
+    multiply();
+    output.innerText =
+      " Circonference de " +
+      number1 +
+      " par le rayon " +
+      number2 +
+      " " +
+      circumference(number1, number2);
+    clear();
+  }
+}
+refreshInput();
+
+// const table1 = [12, 45, 47, 83];
+
+// const output12 = document.getElementById("output12");
+// let buttonSearch = document.getElementById("buttonSearch");
+// buttonSearch.addEventListener("click", updateText13);
+
+// function tablesearchIn(x1, x2) {
+//   if (x1 <= x2.length) {
+//     table1.indexOf(x1);
+//     output12.innerText = "Valeur " + x2[x1] + " a l'index " + x1 + ".";
+//   } else {
+//     output12.innerText = "Pas de valeur avec cet indice dans la table.";
+//   }
+// }
+
+// let elt = Number(document.getElementById("numberExo12"));
+const output13 = document.getElementById("output13");
+let buttonValidate = document.getElementById("buttonValidate13");
+buttonValidate.addEventListener("click", updateText13);
+
+let refTable = [];
+
+function getFocus() {
+  let elt = document.getElementById("numberExo13");
+  elt.focus();
+}
+
+let input = document.getElementById("numberExo13");
+input.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("buttonValidate13").click();
+  }
+});
+
+function updateText13() {
+  if (refTable.length <= 5) {
+    let elt = Number(document.getElementById("numberExo13").value);
+    refTable.push(elt);
+    console.log(refTable);
+    document.getElementById("numberExo13").value = "";
+    getFocus();
+    output13.innerText = refTable;
+  }
+  for (i = 0; refTable.length == 5; i++) {
+    output13.innerText = refTable.reverse();
+    return;
+  }
+}
+
+let buttonReset = document.getElementById("buttonReset13");
+buttonReset.addEventListener("click", resetText13);
+function resetText13() {
+  refTable = [];
+  output13.innerText = refTable;
 }

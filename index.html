@@ -65,6 +65,60 @@
         <button onclick="updateText7()">Valider</button>
         <p id="output7"></p>
       </div>
+      <div class="ExoContainer">
+        <h3>Exo 9 &10</h3>
+        <label for="Score">Indiquez votre note :</label>
+        <input
+          type="range"
+          min="1"
+          max="26"
+          id="lines"
+          value="13"
+          placeholder="Le nombre de ligne max 25"
+          oninput="this.nextElementSibling.value = this.value"
+          0l
+        />
+        <output>13</output>
+        <input
+          type="text"
+          maxlength="2"
+          id="letter"
+          placeholder="Votre caractere"
+        />
+        <button onclick="updateText8()">Valider</button>
+        <p id="output8"></p>
+      </div>
     </div>
+    <div class="ExoContainer">
+      <h3>Exo 11</h3>
+      <label for="nombre 1">Indiquez le premier nombre a calculer :</label>
+      <input type="number" id="number1Exo11" placeholder="Nombre 1" />
+      <label for="Nombre 2">Indiquez le second nombre a calculer :</label>
+      <input type="number" id="number2Exo11" placeholder="Nombre 2" />
+      <button id="buttonAddition">Addition</button>
+      <button id="buttonMultipy">Multiplcation</button>
+      <button id="buttonSquare">Nombre 1 au carre</button>
+      <button id="buttonDivide">Division</button>
+      <button id="buttonCircumference">
+        Circonference de nombre 1 par le rayon nombre 2
+      </button>
+      <h3 id="output9"></h3>
+    </div>
+    <div class="ExoContainer">
+      <h3>Exo 12</h3>
+      <label for="Search">Indiquez le l'index a rechercher :</label>
+      <input type="number" id="numberExo12" placeholder="Rechercher" />
+      <button id="buttonSearch">rechercher</button>
+      <h3 id="output12"></h3>
+    </div>
+  </div>
+  <div class="ExoContainer">
+    <h3>Exo 13</h3>
+    <label for="Search">Rentrer 5 valeurs :</label>
+    <input type="number" id="numberExo13" placeholder="Rechercher" />
+    <button id="buttonValidate13">valider</button>
+    <button id="buttonReset13">Reinitialiser</button>
+    <table id="output13"></table>
+  </div>
   </body>
 </html>
