@@ -350,43 +350,177 @@ refreshInput();
 // }
 
 // let elt = Number(document.getElementById("numberExo12"));
-const output13 = document.getElementById("output13");
-let buttonValidate = document.getElementById("buttonValidate13");
-buttonValidate.addEventListener("click", updateText13);
 
-let refTable = [];
 
-function getFocus() {
-  let elt = document.getElementById("numberExo13");
-  elt.focus();
-}
 
-let input = document.getElementById("numberExo13");
-input.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("buttonValidate13").click();
+
+// const output13 = document.getElementById("output13");
+// let buttonValidate = document.getElementById("buttonValidate13");
+// buttonValidate.addEventListener("click", updateText13);
+
+// let refTable = [];
+
+// function getFocus() {
+//   let elt = document.getElementById("numberExo13");
+//   elt.focus();
+// }
+
+// let input = document.getElementById("numberExo13");
+// input.addEventListener("keydown", function (event) {
+//   if (event.key === "Enter") {
+//     event.preventDefault();
+//     document.getElementById("buttonValidate13").click();
+//   }
+// });
+
+// function updateText13() {
+//   if (refTable.length <= 5) {
+//     let elt = Number(document.getElementById("numberExo13").value);
+//     refTable.push(elt);
+//     console.log(refTable);
+//     document.getElementById("numberExo13").value = "";
+//     getFocus();
+//     output13.innerText = refTable;
+//   }
+//   for (i = 0; refTable.length == 5; i++) {
+//     output13.innerText = refTable.reverse();
+//     return;
+//   }
+// }
+
+// let buttonReset = document.getElementById("buttonReset13");
+// buttonReset.addEventListener("click", resetText13);
+// function resetText13() {
+//   refTable = [];
+//   output13.innerText = refTable;
+// }
+
+
+
+// ----------------------------EXO13---------------------------------
+
+
+
+// const output13 = document.getElementById("output13");
+// let buttonValidate = document.getElementById("buttonValidate13");
+// buttonValidate.addEventListener("click", updateText13);
+
+// let refTable = [];
+// let thisIsLife = [];
+// let elt =0;
+// function getFocus() {
+//   let elt = document.getElementById("numberExo13");
+//   elt.focus();
+// }
+
+// let input = document.getElementById("numberExo13");
+// input.addEventListener("keydown", function (event) {
+//   if (event.key === "Enter") {
+//     event.preventDefault();
+//     document.getElementById("buttonValidate13").click();
+//   }
+// });
+
+// function updateText13() {
+//     let elt = Number(document.getElementById("numberExo13").value);
+//     if (isNaN(elt)) {
+//         output13.innerText ="Votre entree nest pas un nombre."
+//     } else if (thisIsLife.length < 5) {
+//     refTable.push(elt);
+//     console.log(refTable);
+//     console.log(thisIsLife);
+//     document.getElementById("numberExo13").value = "";
+//     getFocus();
+//     thisIsLife = refTable.filter(element => element !== 0);
+//     output13.innerText = thisIsLife;
+//     if(thisIsLife.length == 5) {
+//         output13.innerText = thisIsLife.reverse();
+//       }
+//   }
+// }
+
+// let buttonReset = document.getElementById("buttonReset13");
+// buttonReset.addEventListener("click", resetText13);
+// function resetText13() {
+//   refTable = [];
+//   thisIsLife = [];
+//   document.getElementById("numberExo13").value = "";
+
+// }
+
+
+// ----------------------------EXO14---------------------------------
+
+
+const output14 = document.getElementById("output14");
+const buttonValidate = document.getElementById("buttonValidate14");
+buttonValidate.addEventListener("click", updateText14);
+
+let matiereVar = [];
+let noteVar= [];
+let i=0
+let moyenne=[]
+
+function updateText14() {
+    let indexMax = Number(document.getElementById("indexExo14").value);
+    let matiereInput = String(document.getElementById("matiereExo14").value);
+    let noteInput = Number(document.getElementById("noteExo14").value);
+
+    console.log(i,indexMax)
+    
+    
+    if (isNaN(indexMax)) {
+        output14.innerText ="Votre nombre de note n'est pas un nombre."
+
+    } else if  (isNaN(noteInput)) {
+        output14.innerText ="Votre note n'est pas un nombre."
+
+    } else if (i< indexMax) {
+        i++
+        document.getElementById("indexExo14").disabled=true;
+
+        moyenne.push({matiere: matiereInput, note : noteInput})
+        console.log(moyenne.matiere)
+        console.table(moyenne);
+        matiereInput = "";
+        noteInput = "";
+
+        generateTable(moyenne[i].matiere,moyenne[i].note)
+
+        if (i == indexMax) {
+            buttonValidate.disabled=true;
+          }  
+    }  
+
   }
-});
-
-function updateText13() {
-  if (refTable.length <= 5) {
-    let elt = Number(document.getElementById("numberExo13").value);
-    refTable.push(elt);
-    console.log(refTable);
-    document.getElementById("numberExo13").value = "";
-    getFocus();
-    output13.innerText = refTable;
+  function generateTable(x1,x2) {
+    // creates a <table> element and a <tbody> element
+    const tbl = document.createElement("table");
+    const tblBody = document.createElement("tbody");
+  
+    // creating all cells
+    for (let i = 0; i < 2; i++) {
+      // creates a table row
+      const row = document.createElement("tr");
+  
+      for (let j = 0; j < 2; j++) {
+        // Create a <td> element and a text node, make the text
+        // node the contents of the <td>, and put the <td> at
+        // the end of the table row
+        const cell = document.createElement("td");
+        const cellText = document.createTextNode(x1, x2);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+      }
+  
+      // add the row to the end of the table body
+      tblBody.appendChild(row);
+    }
+  
+    // put the <tbody> in the <table>
+    tbl.appendChild(tblBody);
+    // appends <table> into <body>
+    document.body.appendChild(tbl);
+    // sets the border attribute of tbl to '2'
+    tbl.setAttribute("border", "2");
   }
-  for (i = 0; refTable.length == 5; i++) {
-    output13.innerText = refTable.reverse();
-    return;
-  }
-}
-
-let buttonReset = document.getElementById("buttonReset13");
-buttonReset.addEventListener("click", resetText13);
-function resetText13() {
-  refTable = [];
-  output13.innerText = refTable;
-}
